@@ -1,0 +1,35 @@
+{
+  "name": "unrepeat",
+  "version": "2.0.0",
+  "description": "🔄 A reversed approach to the javascript's \"repeat\" method",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umutcanbolat/unrepeat.git"
+  },
+  "keywords": [
+    "repeat",
+    "repetition",
+    "reverse",
+    "unrepeat",
+    "no-repeat",
+    "string-repetition"
+  ],
+  "author": "Umut Canbolat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umutcanbolat/unrepeat/issues"
+  },
+  "homepage": "https://github.com/umutcanbolat/unrepeat#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  }
+}
