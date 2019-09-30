@@ -5,7 +5,7 @@
 [![NPM version](https://img.shields.io/npm/v/reverse-repeat.svg?style=flat)](https://www.npmjs.com/package/reverse-repeat)
 [![NPM Downloads](https://img.shields.io/npm/dm/reverse-repeat.svg?style=flat)](https://www.npmjs.com/package/reverse-repeat) -->
 
-A reversed approach to the javascript's [repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) method.
+The inverse of the javascript's [repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) method.
 
 <!-- ## Install
 
