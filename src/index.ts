@@ -1,4 +1,4 @@
-export interface output {
+export interface Output {
   repeated: string;
   count: number;
 }
