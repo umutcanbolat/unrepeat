@@ -1,5 +1,7 @@
 # unrepeat
 
+[![Build Status](https://travis-ci.org/umutcanbolat/unrepeat.svg?branch=master)](https://travis-ci.org/umutcanbolat/unrepeat)
+
 <!-- [![Build status](https://img.shields.io/travis/umutcanbolat/reverse-repeat/master.svg?style=flat)](https://travis-ci.org/umutcanbolat/reverse-repeat)
 [![Test coverage](https://img.shields.io/codecov/c/github/umutcanbolat/reverse-repeat.svg?style=flat)](https://codecov.io/gh/umutcanbolat/reverse-repeat)
 [![NPM version](https://img.shields.io/npm/v/reverse-repeat.svg?style=flat)](https://www.npmjs.com/package/reverse-repeat)
