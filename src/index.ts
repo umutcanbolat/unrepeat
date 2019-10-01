@@ -8,7 +8,7 @@ export interface Output {
  * @param string - The string that will be searched for repeats.
  * @returns Object containing the repeated string and the repeat count.
  */
-export default function unrepeat(text: string): output {
+export default function unrepeat(text: string): Output {
   // start from the minimum prime number and iterate till the text length
   for (let i = 2; i <= text.length; i++) {
     // check if text can be divided by i without remainder
