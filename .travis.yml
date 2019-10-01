@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - '12'
+  - '11'
+  - '10'
+  - '8'
+
+before_script:
+  - npm install
+  - npm run build
+
+script:
+  - npm run test
+
+jobs:
+  include:
+    - stage: npm release
+      script: echo "Deploying to npm ..."
+      deploy:
+        provider: npm
+        api_key: $NPM_API_KEY
+        on:
+          branch: master
+          tags: true
