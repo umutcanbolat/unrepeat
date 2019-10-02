@@ -16,6 +16,7 @@ jobs:
   include:
     - stage: npm release
       script: echo "Deploying to npm ..."
+      script: npm run build
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -30,7 +31,9 @@ jobs:
         api_key: $GITHUB_TOKEN
         # enable wildcards
         file_glob: true
-        file: '{unrepeat}-*.tgz'
+        file: 'unrepeat-*.tgz'
         skip_cleanup: true
         on:
           tags: true
+    - stage: upload coverage
+      script: codecov --token=$CODECOV_TOKEN
