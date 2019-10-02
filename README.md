@@ -1,13 +1,12 @@
 # unrepeat
 
 [![Build Status](https://travis-ci.org/umutcanbolat/unrepeat.svg?branch=master)](https://travis-ci.org/umutcanbolat/unrepeat)
+[![Conventional Changelog](https://img.shields.io/badge/changelog-conventional-brightgreen.svg)](https://github.com/conventional-changelog)
+[![Test coverage](https://img.shields.io/codecov/c/github/umutcanbolat/unrepeat.svg?style=flat)](https://codecov.io/gh/umutcanbolat/unrepeat)
+[![NPM version](https://img.shields.io/npm/v/unrepeat.svg?style=flat)](https://www.npmjs.com/package/unrepeat)
+![NPM](https://img.shields.io/npm/l/unrepeat)
 
-<!-- [![Build status](https://img.shields.io/travis/umutcanbolat/reverse-repeat/master.svg?style=flat)](https://travis-ci.org/umutcanbolat/reverse-repeat)
-[![Test coverage](https://img.shields.io/codecov/c/github/umutcanbolat/reverse-repeat.svg?style=flat)](https://codecov.io/gh/umutcanbolat/reverse-repeat)
-[![NPM version](https://img.shields.io/npm/v/reverse-repeat.svg?style=flat)](https://www.npmjs.com/package/reverse-repeat)
-[![NPM Downloads](https://img.shields.io/npm/dm/reverse-repeat.svg?style=flat)](https://www.npmjs.com/package/reverse-repeat) -->
-
-The inverse of the javascript's [repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) method.
+The missing inverse of the javascript's [repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) method.
 
 ## Install
 
@@ -40,6 +39,10 @@ chorus.repeat(3);
 unrepeat(chorus.repeat(3));
 //=> { repeated: 'Because I\'m happy. ', count: 3 }
 ```
+
+## Versioning
+
+See the [VERSIONING](VERSIONING.md) for details.
 
 ## Credits
 
