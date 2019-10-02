@@ -36,4 +36,5 @@ jobs:
         on:
           tags: true
     - stage: upload coverage
-      script: codecov --token=$CODECOV_TOKEN
+      script: npm test -- --coverage
+      after_script: codecov --token=$CODECOV_TOKEN
