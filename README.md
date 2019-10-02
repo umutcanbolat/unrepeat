@@ -9,15 +9,15 @@
 
 The inverse of the javascript's [repeat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat) method.
 
-<!-- ## Install
+## Install
 
 ```sh
-npm install unrepeat --save
+npm install unrepeat
 ```
 
 ```sh
 yarn add unrepeat
-``` -->
+```
 
 ## Usage
 
