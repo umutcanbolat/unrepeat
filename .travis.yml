@@ -16,16 +16,17 @@ jobs:
   include:
     - stage: npm release
       script: echo "Deploying to npm ..."
-      before_deploy: npm run build
       deploy:
         provider: npm
         email: $NPM_EMAIL
         api_key: $NPM_API_KEY
+        # prevent travis to clean build files
+        skip_cleanup: true
         on:
           tags: true
     - stage: github release
       script: echo "Deploying to GitHub ..."
-      before_deploy: npm pack
+      script: npm pack
       deploy:
         provider: releases
         api_key: $GITHUB_TOKEN
