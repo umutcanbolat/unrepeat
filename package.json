@@ -12,7 +12,7 @@
     "test": "jest --coverage --bail",
     "lint": "eslint --ext .js,.ts src/ --ext .js,.ts test/",
     "version:recommend": "conventional-recommended-bump -p angular",
-    "version:bump": "npm version",
+    "version:bump": "npm version -m \"chore(RELEASE): publish %s\"",
     "preversion": "npm test && npm run build",
     "version": "npm run changelog && git add .",
     "postversion": "git push && git push --tags",
