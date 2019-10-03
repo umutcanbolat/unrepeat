@@ -40,9 +40,9 @@ unrepeat(chorus.repeat(3));
 //=> { repeated: 'Because I\'m happy. ', count: 3 }
 ```
 
-## Versioning
+## Releasing
 
-See the [VERSIONING](VERSIONING.md) for details.
+See the [RELEASING](RELEASING.md) for details.
 
 ## Credits
 

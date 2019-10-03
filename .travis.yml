@@ -16,7 +16,7 @@ jobs:
   include:
     - stage: npm release
       script: echo "Deploying to npm ..."
-      script: npm run build
+      before_deploy: npm run build
       deploy:
         provider: npm
         email: $NPM_EMAIL
@@ -25,7 +25,7 @@ jobs:
           tags: true
     - stage: github release
       script: echo "Deploying to GitHub ..."
-      script: npm pack
+      before_deploy: npm pack
       deploy:
         provider: releases
         api_key: $GITHUB_TOKEN
