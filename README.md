@@ -40,9 +40,15 @@ unrepeat(chorus.repeat(3));
 //=> { repeated: 'Because I\'m happy. ', count: 3 }
 ```
 
+## Conributing
+
+PR's are always welcome. There is only one thing to know before contributing. Commit messages must comply with [conventional commits](https://www.conventionalcommits.org). Otherwise [husky](https://github.com/typicode/husky) will complain. :)
+
+Thanks to [commitizen](https://github.com/commitizen), `npm run commit` command can be used to create commit messages complying with conventional commits.
+
 ## Releasing
 
-See the [RELEASING](RELEASING.md) for details.
+See [RELEASING](RELEASING.md) for details.
 
 ## Credits
 
