@@ -1,3 +1,12 @@
+## [2.0.7](https://github.com/umutcanbolat/unrepeat/compare/v2.0.6...v2.0.7) (2019-10-05)
+
+
+### Performance Improvements
+
+* improve performance by checking if the text length is prime or not ([ce6a9f8](https://github.com/umutcanbolat/unrepeat/commit/ce6a9f8))
+
+
+
 ## [2.0.6](https://github.com/umutcanbolat/unrepeat/compare/v2.0.5...v2.0.6) (2019-10-03)
 
 

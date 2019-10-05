@@ -1,6 +1,6 @@
 {
   "name": "unrepeat",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "🔄 The missing inverse of the javascript's \"repeat\" method",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
