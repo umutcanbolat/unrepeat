@@ -60,4 +60,27 @@ describe('unrepeat', () => {
     expect(result.repeated).toEqual(char);
     expect(result.count).toEqual(repCount);
   });
+
+  describe('chck for the strings whose length is a prime number', () => {
+    it('should work for not repeated strings', () => {
+      const prime = 76521967;
+      const char = 'A';
+      const text = char.repeat(prime - 1) + 'B';
+
+      const result = unrepeat(text);
+
+      expect(result.repeated).toEqual(text);
+      expect(result.count).toEqual(1);
+    });
+
+    it('should work for repeated strings', () => {
+      const prime = 76521967;
+      const char = 'A';
+
+      const result = unrepeat(char.repeat(prime));
+
+      expect(result.repeated).toEqual(char);
+      expect(result.count).toEqual(prime);
+    });
+  });
 });
