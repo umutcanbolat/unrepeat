@@ -20,7 +20,7 @@ jobs:
         provider: npm
         email: $NPM_EMAIL
         api_key: $NPM_API_KEY
-        # prevent travis to clean build files
+        # prevent travis from cleaning build files
         skip_cleanup: true
         on:
           tags: true
@@ -36,6 +36,6 @@ jobs:
         skip_cleanup: true
         on:
           tags: true
-    - stage: upload coverage
+    - stage: codecov upload
       script: npm test -- --coverage
       after_script: codecov --token=$CODECOV_TOKEN

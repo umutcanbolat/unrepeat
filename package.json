@@ -5,12 +5,13 @@
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "scripts": {
+    "commit": "git-cz",
     "build": "tsc",
     "test": "jest --coverage --bail",
     "lint": "eslint --ext .js,.ts src/ --ext .js,.ts test/",
     "version:recommend": "conventional-recommended-bump -p angular",
     "version:bump": "npm version -m \"chore(RELEASE): publish %s\"",
-    "preversion": "npm test && npm run build",
+    "preversion": "npm test && npm run lint && npm run build",
     "version": "npm run changelog && git add .",
     "postversion": "git push && git push --tags",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
@@ -19,13 +20,19 @@
     "type": "git",
     "url": "git+https://github.com/umutcanbolat/unrepeat.git"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "keywords": [
     "repeat",
     "repetition",
     "reverse",
     "unrepeat",
     "no-repeat",
-    "string-repetition"
+    "string-repetition",
+    "inverse",
+    "string",
+    "utility"
   ],
   "author": "Umut Canbolat",
   "license": "MIT",
@@ -34,18 +41,42 @@
   },
   "homepage": "https://github.com/umutcanbolat/unrepeat#readme",
   "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
     "@types/jest": "^24.0.18",
     "@typescript-eslint/eslint-plugin": "^2.3.2",
     "@typescript-eslint/parser": "^2.3.2",
     "codecov": "^3.6.1",
+    "commitizen": "^4.0.3",
     "conventional-changelog-cli": "^2.0.23",
     "conventional-recommended-bump": "^6.0.0",
+    "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.5.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.8",
     "jest": "^24.9.0",
+    "lint-staged": "^10.0.0-0",
     "prettier": "^1.18.2",
     "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "eslint --fix",
+      "jest --coverage --bail --findRelatedTests",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
