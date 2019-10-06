@@ -1,3 +1,7 @@
+## [2.0.8](https://github.com/umutcanbolat/unrepeat/compare/v2.0.7...v2.0.8) (2019-10-06)
+
+
+
 ## [2.0.7](https://github.com/umutcanbolat/unrepeat/compare/v2.0.6...v2.0.7) (2019-10-05)
 
 
