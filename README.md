@@ -40,7 +40,7 @@ unrepeat(chorus.repeat(3));
 //=> { repeated: 'Because I\'m happy. ', count: 3 }
 ```
 
-## Conributing
+## Contributing
 
 PR's are always welcome. There is only one thing to know before contributing. Commit messages must comply with [conventional commits](https://www.conventionalcommits.org). Otherwise [commitlint](https://github.com/conventional-changelog/commitlint) will complain. :)
 
@@ -56,4 +56,4 @@ Developed by [Umut Canbolat](https://github.com/umutcanbolat).
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
