@@ -1,15 +1,11 @@
+os: linux
 language: node_js
 node_js:
-  - '12'
-  - '11'
-  - '10'
-  - '8'
-
-before_script:
-  - npm install
-  - npm run build
+  - node
+  - lts/*
 
 script:
+  - npm run build
   - npm run test
 
 jobs:
@@ -17,6 +13,7 @@ jobs:
     - stage: npm release
       script: echo "Deploying to npm ..."
       deploy:
+        edge: true
         provider: npm
         email: $NPM_EMAIL
         api_key: $NPM_API_KEY
@@ -25,9 +22,11 @@ jobs:
         on:
           tags: true
     - stage: github release
-      script: echo "Deploying to GitHub ..."
-      script: npm pack
+      script:
+        - echo "Deploying to GitHub ..."
+        - npm pack
       deploy:
+        edge: true
         provider: releases
         api_key: $GITHUB_TOKEN
         # enable wildcards
