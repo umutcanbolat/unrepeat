@@ -21,8 +21,8 @@ jobs:
         api_key: $NPM_API_KEY
         # prevent travis from cleaning build files
         skip_cleanup: true
-        # on:
-        #   tags: true
+        on:
+          tags: true
     - stage: github release
       script:
         - echo "Deploying to GitHub ..."

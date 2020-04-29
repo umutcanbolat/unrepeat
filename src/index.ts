@@ -1,6 +1,6 @@
 import { isPrime } from './util';
 
-export interface Output {
+interface Unrepeated {
   repeated: string;
   count: number;
 }
@@ -10,7 +10,7 @@ export interface Output {
  * @param string - The string that will be searched for repeats.
  * @returns Object containing the repeated string and the repeat count.
  */
-export function unrepeat(text: string): Output {
+function unrepeat(text: string): Unrepeated {
   const textLength = text.length;
 
   // divider: number to attempt dividing the original text
@@ -74,4 +74,4 @@ export function unrepeat(text: string): Output {
   };
 }
 
-export default unrepeat;
+export = unrepeat;
