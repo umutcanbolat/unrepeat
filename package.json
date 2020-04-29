@@ -11,7 +11,7 @@
     "lint": "eslint --ext .js,.ts src/ --ext .js,.ts test/",
     "lint:fix": "yarn lint --fix",
     "version:recommend": "conventional-recommended-bump -p angular",
-    "version:bump": "yarn version -m \"chore(release): publish %s\"",
+    "version:bump": "npm version -m \"chore(release): publish %s\"",
     "preversion": "yarn test && yarn lint && yarn build",
     "version": "yarn changelog && git add .",
     "postversion": "git push && git push --tags",
