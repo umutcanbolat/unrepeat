@@ -43,7 +43,8 @@ describe('unrepeat', () => {
 
   it('should work with big number of repeats', () => {
     const char = 'test';
-    const repCount = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19 * 23;
+    // repCount: a very big number
+    const repCount = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19;
 
     const result = unrepeat(char.repeat(repCount));
 
