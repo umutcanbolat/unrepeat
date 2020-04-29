@@ -1,9 +1,4 @@
-# [2.1.0](https://github.com/umutcanbolat/unrepeat/compare/v2.0.8...v2.1.0) (2020-02-22)
-
-
-### Features
-
-* provide named export to support commonjs too ([6c9d7a5](https://github.com/umutcanbolat/unrepeat/commit/6c9d7a5))
+## [2.1.1](https://github.com/umutcanbolat/unrepeat/compare/v2.0.8...v2.1.1) (2020-04-29)
 
 
 
