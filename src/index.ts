@@ -10,7 +10,7 @@ export interface Output {
  * @param string - The string that will be searched for repeats.
  * @returns Object containing the repeated string and the repeat count.
  */
-export default function unrepeat(text: string): Output {
+export function unrepeat(text: string): Output {
   const textLength = text.length;
 
   // divider: number to attempt dividing the original text
@@ -73,3 +73,5 @@ export default function unrepeat(text: string): Output {
     count: 1,
   };
 }
+
+export default unrepeat;

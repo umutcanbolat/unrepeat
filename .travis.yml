@@ -1,33 +1,35 @@
+os: linux
 language: node_js
 node_js:
-  - '12'
-  - '11'
-  - '10'
-  - '8'
-
-before_script:
-  - npm install
-  - npm run build
+  - node
+  - lts/*
 
 script:
-  - npm run test
+  - yarn test
+  - yarn lint
+  - yarn build
 
 jobs:
   include:
     - stage: npm release
-      script: echo "Deploying to npm ..."
+      script:
+        - echo "Deploying to npm ..."
+        - yarn build
       deploy:
         provider: npm
         email: $NPM_EMAIL
         api_key: $NPM_API_KEY
         # prevent travis from cleaning build files
         skip_cleanup: true
-        on:
-          tags: true
+        # on:
+        #   tags: true
     - stage: github release
-      script: echo "Deploying to GitHub ..."
-      script: npm pack
+      script:
+        - echo "Deploying to GitHub ..."
+        - yarn build
+        - yarn pack
       deploy:
+        edge: true
         provider: releases
         api_key: $GITHUB_TOKEN
         # enable wildcards
