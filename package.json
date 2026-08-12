@@ -1,6 +1,6 @@
 {
   "name": "unrepeat",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "packageManager": "pnpm@11.21.0",
   "description": "Find the shortest repeating pattern in a string",
   "type": "module",
