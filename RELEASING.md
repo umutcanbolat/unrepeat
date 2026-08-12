@@ -6,6 +6,7 @@ Start from an up-to-date, clean `master` branch, then install and verify the pac
 git switch master
 git pull --ff-only
 pnpm install --frozen-lockfile
+pnpm format:check
 pnpm test
 pnpm build
 ```
@@ -17,10 +18,6 @@ pnpm version major
 git push --follow-tags
 ```
 
-After CI passes, publish the tagged version:
-
-```sh
-pnpm publish
-```
+The `Publish` GitHub Actions workflow publishes the tagged version to npm.
 
 Finally, write the release notes on the [GitHub releases page](https://github.com/umutcanbolat/unrepeat/releases).
