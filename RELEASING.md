@@ -11,6 +11,14 @@ pnpm test
 pnpm build
 ```
 
+Manually add the new version entry to `CHANGELOG.md`, then commit and push it:
+
+```sh
+git add CHANGELOG.md
+git commit -m "chore: update CHANGELOG for version x.y.z release"
+git push
+```
+
 Create the release commit and tag (replace `major` with `minor` or `patch` when appropriate):
 
 ```sh
@@ -18,6 +26,4 @@ pnpm version major
 git push --follow-tags
 ```
 
-The `Publish` GitHub Actions workflow publishes the tagged version to npm.
-
-Finally, write the release notes on the [GitHub releases page](https://github.com/umutcanbolat/unrepeat/releases).
+The `Publish` GitHub Actions workflow publishes the tagged version to npm and creates the GitHub Release.
