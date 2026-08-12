@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/umutcanbolat/unrepeat/compare/v3.0.0...v3.0.1) (2026-08-12)
+
+### CI
+
+- Create a GitHub Release after publishing to npm.
+- Update GitHub Actions to the latest major versions.
+
 ## [3.0.0](https://github.com/umutcanbolat/unrepeat/compare/v2.1.1...v3.0.0) (2026-08-12)
 
 ### Breaking Changes
