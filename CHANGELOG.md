@@ -1,3 +1,9 @@
+## [3.0.2](https://github.com/umutcanbolat/unrepeat/compare/v3.0.1...v3.0.2) (2026-08-12)
+
+### CI
+
+- Fix GitHub Release creation in the publish workflow.
+
 ## [3.0.1](https://github.com/umutcanbolat/unrepeat/compare/v3.0.0...v3.0.1) (2026-08-12)
 
 ### CI
