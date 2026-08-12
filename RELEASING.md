@@ -1,25 +1,26 @@
 # Releasing
 
-In order to release a new version, we can follow steps below.
-
-First get a recommended release type by running
+Start from an up-to-date, clean `master` branch, then install and verify the package:
 
 ```sh
-npm run version:recommend
+git switch master
+git pull --ff-only
+pnpm install --frozen-lockfile
+pnpm test
+pnpm build
 ```
 
-This will recommend one of the following release types depending on the commit history: `patch`, `minor` or `major` . We can use the recommended bump to release a new version.
+Create the release commit and tag (replace `major` with `minor` or `patch` when appropriate):
 
 ```sh
-npm run version:bump patch
+pnpm version major
+git push --follow-tags
 ```
 
-This command;
+After CI passes, publish the tagged version:
 
-- Runs tests and linters, builds project.
-- Updates version number in package.json.
-- Generates a [CHANGELOG](CHANGELOG.md) based on the latest commits. (See [Conventional Changelog](https://github.com/conventional-changelog))
-- Commits these changes with a message like `chore(release): publish %s` and creates a new tag with the version number.
-- Pushes all these changes to upstream.
+```sh
+pnpm publish
+```
 
-CI/CD will take care of the rest and publish the project to the npm registry and GitHub releases with the newly tagged version.
+Finally, write the release notes on the [GitHub releases page](https://github.com/umutcanbolat/unrepeat/releases).

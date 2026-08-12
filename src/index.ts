@@ -1,77 +1,49 @@
-import { isPrime } from './util';
+import { isPrime } from './util.js';
 
-interface Unrepeated {
-  repeated: string;
+export type UnrepeatResult = Readonly<{
+  pattern: string;
   count: number;
-}
+}>;
 
 /**
- * @Method Returns the repeated string along with the repeat count.
- * @param string - The string that will be searched for repeats.
- * @returns Object containing the repeated string and the repeat count.
+ Finds the smallest pattern that makes up the input string.
+ @param text - The string to search for repeats in.
+ @returns The repeating pattern and the number of times it occurs.
  */
-function unrepeat(text: string): Unrepeated {
+function unrepeat(text: string): UnrepeatResult {
   const textLength = text.length;
 
-  // divider: number to attempt dividing the original text
-  // initially, the minimum prime number
-  let divider = 2;
+  // Prime-length strings can only repeat as a single character or not at all.
+  const startingRepeatCount = isPrime(textLength) ? textLength : 2;
 
-  // if textLength is a prime number,
-  // its repeated string is either a single character, or the text itself.
-  // so we will not iterate through it to find out the repeated string.
-  if (isPrime(textLength)) {
-    divider = textLength;
-  }
+  for (let repeatCount = startingRepeatCount; repeatCount <= textLength; repeatCount++) {
+    if (textLength % repeatCount !== 0) {
+      continue;
+    }
 
-  // start from the divider and iterate till the text length.
-  // i: possible repeats count
-  for (let i = divider; i <= textLength; i++) {
-    // check if the text can be divided by i without remainder.
-    // if there is a reminder, the repeats count cannot be i. So we can skip.
-    if (textLength % i === 0) {
-      // possible repeated string and its length.
-      const repLength = textLength / i;
-      const repeated = text.substr(0, repLength);
+    const pattern = text.slice(0, textLength / repeatCount);
 
-      // set this flag false if it is not repeated on every step.
-      let isRepeated = true;
-
-      // start scanning the original string to find out.
-      // if possible repeated string is really repeated along the whole string.
-      for (let j = 1; j < i; j++) {
-        if (repeated !== text.substr(j * repLength, repLength)) {
-          // if there is a mismatch, set isRepeated to false and exit loop.
-          isRepeated = false;
-          break;
-        }
+    if (pattern.repeat(repeatCount) === text) {
+      if (repeatCount === textLength) {
+        return {
+          pattern,
+          count: repeatCount,
+        };
       }
 
-      // if the possible repeated is repeated along the whole text.
-      if (isRepeated) {
-        // repeat count is equal to the text length, repeated is a single char.
-        if (i === textLength) {
-          return {
-            repeated,
-            count: i,
-          };
-        } else {
-          // repeated is the part of the text, call unrepeat again on it.
-          const res = unrepeat(repeated);
-          return {
-            repeated: res.repeated,
-            count: textLength / res.repeated.length,
-          };
-        }
-      }
+      // The first repeated chunk may still contain a smaller repeated pattern.
+      const result = unrepeat(pattern);
+      return {
+        pattern: result.pattern,
+        count: textLength / result.pattern.length,
+      };
     }
   }
 
-  // if no repeats found, then return the input itself
   return {
-    repeated: text,
+    pattern: text,
     count: 1,
   };
 }
 
-export = unrepeat;
+export default unrepeat;

@@ -1,7 +1,7 @@
 /**
- * @Method Returns if provided number is prime or not.
- * @param n - The number to check.
- * @returns boolean
+ Checks whether the given number is prime.
+ @param n - The number to check.
+ @returns Whether `n` is prime.
  */
 export function isPrime(n: number): boolean {
   for (let i = 2; i <= Math.sqrt(n); i++) {

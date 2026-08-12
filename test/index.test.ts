@@ -1,4 +1,5 @@
-import unrepeat from '../src';
+import { describe, expect, it } from 'vitest';
+import unrepeat from '../src/index.js';
 
 describe('unrepeat', () => {
   it('should work with single character string', () => {
@@ -7,7 +8,7 @@ describe('unrepeat', () => {
 
     const result = unrepeat(char.repeat(repCount));
 
-    expect(result.repeated).toEqual(char);
+    expect(result.pattern).toEqual(char);
     expect(result.count).toEqual(repCount);
   });
 
@@ -17,7 +18,7 @@ describe('unrepeat', () => {
 
     const result = unrepeat(char.repeat(repCount));
 
-    expect(result.repeated).toEqual(char);
+    expect(result.pattern).toEqual(char);
     expect(result.count).toEqual(repCount);
   });
 
@@ -27,7 +28,7 @@ describe('unrepeat', () => {
 
     const result = unrepeat(char.repeat(repCount));
 
-    expect(result.repeated).toEqual(char);
+    expect(result.pattern).toEqual(char);
     expect(result.count).toEqual(repCount);
   });
 
@@ -37,18 +38,18 @@ describe('unrepeat', () => {
 
     const result = unrepeat(char.repeat(repCount));
 
-    expect(result.repeated).toEqual(char);
+    expect(result.pattern).toEqual(char);
     expect(result.count).toEqual(repCount);
   });
 
   it('should work with big number of repeats', () => {
     const char = 'test';
-    // repCount: a very big number
+    // RepCount: a very big number
     const repCount = 2 * 3 * 5 * 7 * 11 * 13 * 17 * 19;
 
     const result = unrepeat(char.repeat(repCount));
 
-    expect(result.repeated).toEqual(char);
+    expect(result.pattern).toEqual(char);
     expect(result.count).toEqual(repCount);
   });
 
@@ -58,29 +59,29 @@ describe('unrepeat', () => {
 
     const result = unrepeat(char.repeat(repCount));
 
-    expect(result.repeated).toEqual(char);
+    expect(result.pattern).toEqual(char);
     expect(result.count).toEqual(repCount);
   });
 
   describe('chck for the strings whose length is a prime number', () => {
     it('should work for not repeated strings', () => {
-      const prime = 76521967;
+      const prime = 76_521_967;
       const char = 'A';
       const text = char.repeat(prime - 1) + 'B';
 
       const result = unrepeat(text);
 
-      expect(result.repeated).toEqual(text);
+      expect(result.pattern).toEqual(text);
       expect(result.count).toEqual(1);
     });
 
     it('should work for repeated strings', () => {
-      const prime = 76521967;
+      const prime = 76_521_967;
       const char = 'A';
 
       const result = unrepeat(char.repeat(prime));
 
-      expect(result.repeated).toEqual(char);
+      expect(result.pattern).toEqual(char);
       expect(result.count).toEqual(prime);
     });
   });
